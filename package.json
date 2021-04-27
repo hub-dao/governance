@@ -1,7 +1,7 @@
 {
-  "name": "@uniswap/governance",
-  "version": "1.0.2",
-  "description": "🏛 Governance contracts for the Uniswap protocol",
+  "name": "@hubdao/governance",
+  "version": "1.0.0",
+  "description": "🏛 Governance contracts for the Hubdao protocol",
   "author": "Noah Zinsmeister",
   "license": "MIT",
   "files": [
@@ -18,7 +18,7 @@
   "devDependencies": {
     "@types/chai": "^4.2.12",
     "@types/mocha": "^8.0.3",
-    "@uniswap/v2-core": "^1.0.1",
+    "@hubdao/core": "^1.0.2",
     "chai": "^4.2.0",
     "ethereum-waffle": "^3.1.0",
     "ethereumjs-util": "^7.0.4",

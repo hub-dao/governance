@@ -2,11 +2,11 @@ import chai, { expect } from 'chai'
 import { Contract, constants } from 'ethers'
 import { solidity, MockProvider, createFixtureLoader, deployContract } from 'ethereum-waffle'
 
-import UniswapV2Factory from '@uniswap/v2-core/build/UniswapV2Factory.json'
-import UniswapV2Pair from '@uniswap/v2-core/build/UniswapV2Pair.json'
+import HubdaoFactory from '@hubdao/core/build/HubdaoFactory.json'
+import HubdaoPair from '@hubdao/core/build/HubdaoPair.json'
 import FeeToSetter from '../../build/FeeToSetter.json'
 import FeeTo from '../../build/FeeTo.json'
-import Uni from '../../build/Uni.json'
+import HD from '../../build/HD.json'
 
 import { governanceFixture } from '../fixtures'
 import { mineBlock, expandTo18Decimals } from '../utils'
@@ -29,8 +29,8 @@ describe('scenario:FeeTo', () => {
   })
 
   let factory: Contract
-  beforeEach('deploy uniswap v2', async () => {
-    factory = await deployContract(wallet, UniswapV2Factory, [wallet.address])
+  beforeEach('deploy hubdao', async () => {
+    factory = await deployContract(wallet, HubdaoFactory, [wallet.address])
   })
 
   let feeToSetter: Contract
@@ -70,9 +70,9 @@ describe('scenario:FeeTo', () => {
     const tokens: Contract[] = []
     beforeEach('make test tokens', async () => {
       const { timestamp: now } = await provider.getBlock('latest')
-      const token0 = await deployContract(wallet, Uni, [wallet.address, constants.AddressZero, now + 60 * 60])
+      const token0 = await deployContract(wallet, HD, [wallet.address, constants.AddressZero, now + 60 * 60])
       tokens.push(token0)
-      const token1 = await deployContract(wallet, Uni, [wallet.address, constants.AddressZero, now + 60 * 60])
+      const token1 = await deployContract(wallet, HD, [wallet.address, constants.AddressZero, now + 60 * 60])
       tokens.push(token1)
     })
 
@@ -84,7 +84,7 @@ describe('scenario:FeeTo', () => {
       // create the pair
       await factory.createPair(tokens[0].address, tokens[1].address)
       const pairAddress = await factory.getPair(tokens[0].address, tokens[1].address)
-      pair = new Contract(pairAddress, UniswapV2Pair.abi).connect(wallet)
+      pair = new Contract(pairAddress, HubdaoPair.abi).connect(wallet)
 
       // add liquidity
       await tokens[0].transfer(pair.address, expandTo18Decimals(1))

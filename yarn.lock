@@ -398,6 +398,11 @@
     "@ethersproject/properties" "^5.0.3"
     "@ethersproject/strings" "^5.0.3"
 
+"@hubdao/core@^1.0.2":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@hubdao/core/-/core-1.0.1.tgz#1785caefd1850f0fe4612c6de6807295623520cb"
+  integrity sha512-bn/JBiTBvXzLLG8LpCj05h2T19pVi4QmVThwNkfLXFXUO5wzovpBch+qPtEnj5iAx0ITw5B8AWJzrwDN/U82aQ==
+
 "@resolver-engine/core@^0.3.3":
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/@resolver-engine/core/-/core-0.3.3.tgz#590f77d85d45bc7ecc4e06c654f41345db6ca967"
@@ -519,11 +524,6 @@
   integrity sha512-+ZjSA8ELlOp8SlKi0YLB2tz9d5iPNEmOBd+8Rz21wTMdaXQIa9b6TEnD6l5qKOCypE7FSyPyck12qZJxSDNoog==
   dependencies:
     "@types/node" "*"
-
-"@uniswap/v2-core@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@uniswap/v2-core/-/v2-core-1.0.1.tgz#af8f508bf183204779938969e2e54043e147d425"
-  integrity sha512-MtybtkUPSyysqLY2U210NBDeCHX+ltHt3oADGdjqoThZaFRDKwM6k1Nb3F0A3hk5hwuQvytFWhrWHOEq6nVJ8Q==
 
 "@web3-js/scrypt-shim@^0.1.0":
   version "0.1.0"
